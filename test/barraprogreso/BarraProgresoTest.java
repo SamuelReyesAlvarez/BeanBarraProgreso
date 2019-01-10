@@ -10,10 +10,10 @@ import javax.swing.JFrame;
 import javax.swing.border.Border;
 import org.junit.After;
 import org.junit.AfterClass;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *
@@ -105,7 +105,7 @@ public class BarraProgresoTest {
         System.out.println("setValores");
         int min = 0;
         int max = 100;
-        int progresoActual = 0;
+        int progresoActual = 50;
         BarraProgreso instance = new BarraProgreso();
         instance.setValores(min, max, progresoActual);
     }
@@ -163,7 +163,7 @@ public class BarraProgresoTest {
     @Test
     public void testSetMaximo() {
         System.out.println("setMaximo");
-        int maximo = 0;
+        int maximo = 100;
         BarraProgreso instance = new BarraProgreso();
         instance.setMaximo(maximo);
     }
@@ -186,7 +186,7 @@ public class BarraProgresoTest {
     @Test
     public void testSetProgreso() {
         System.out.println("setProgreso");
-        int progreso = 0;
+        int progreso = 50;
         BarraProgreso instance = new BarraProgreso();
         instance.setProgreso(progreso);
     }
@@ -209,7 +209,7 @@ public class BarraProgresoTest {
     @Test
     public void testSetTexto() {
         System.out.println("setTexto");
-        String texto = "";
+        String texto = "Cargando..";
         BarraProgreso instance = new BarraProgreso();
         instance.setTexto(texto);
     }
