@@ -17,7 +17,8 @@ import javax.swing.border.Border;
  * siguiente ventana cuando el progreso de la barra alcanza el 100%.
  *
  * @version 3.1
- * @date 14/01/2019
+ *
+ * Ultima modificacion 14/01/2019
  *
  */
 public class BarraProgreso extends JProgressBar implements Serializable {
@@ -78,8 +79,8 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Constructores con framePadre + frameNuevo
      *
-     * @param ventanaPadre
-     * @param ventanaNueva
+     * @param ventanaPadre JFrame
+     * @param ventanaNueva JFrame
      */
     public BarraProgreso(JFrame ventanaPadre, JFrame ventanaNueva) {
         setVentanaPadre(ventanaPadre);
@@ -90,8 +91,8 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Constructor con framePadre + dialogNuevo
      *
-     * @param ventanaPadre
-     * @param ventanaNueva
+     * @param ventanaPadre JFrame
+     * @param ventanaNueva JDialog
      */
     public BarraProgreso(JFrame ventanaPadre, JDialog ventanaNueva) {
         setVentanaPadre(ventanaPadre);
@@ -102,8 +103,8 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Constructor con dialogPadre + frameNuevo
      *
-     * @param ventanaPadre
-     * @param ventanaNueva
+     * @param ventanaPadre JDialog
+     * @param ventanaNueva JFrame
      */
     public BarraProgreso(JDialog ventanaPadre, JFrame ventanaNueva) {
         setVentanaPadre(ventanaPadre);
@@ -114,8 +115,8 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Constructor con dialogPadre + dialogNuevo
      *
-     * @param ventanaPadre
-     * @param ventanaNueva
+     * @param ventanaPadre JDialog
+     * @param ventanaNueva JDialog
      */
     public BarraProgreso(JDialog ventanaPadre, JDialog ventanaNueva) {
         setVentanaPadre(ventanaPadre);
@@ -126,7 +127,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Establece que la ventana que contiene a la barra es un JFrame
      *
-     * @param ventanaPadre
+     * @param ventanaPadre JFrame
      */
     public void setVentanaPadre(JFrame ventanaPadre) {
         if (ventanaPadre != null) {
@@ -140,7 +141,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Establece que la ventana que contiene a la barra es un JDialog
      *
-     * @param ventanaPadre
+     * @param ventanaPadre JDialog
      */
     public void setVentanaPadre(JDialog ventanaPadre) {
         if (ventanaPadre != null) {
@@ -154,7 +155,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Establece que la ventana que la barra abrira es un JFrame
      *
-     * @param ventanaNueva
+     * @param ventanaNueva JFrame
      */
     public void setVentanaNueva(JFrame ventanaNueva) {
         if (ventanaNueva != null) {
@@ -168,7 +169,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Establece que la ventana que la barra abrira es un JDialog
      *
-     * @param ventanaNueva
+     * @param ventanaNueva JDialog
      */
     public void setVentanaNueva(JDialog ventanaNueva) {
         if (ventanaNueva != null) {
@@ -182,9 +183,8 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Se encarga de establecer los valores minimo y maximo de la barra
      *
-     * @param min
-     * @param max
-     * @throws IllegalArgumentException
+     * @param min int
+     * @param max int
      */
     public void setValores(int min, int max) throws IllegalArgumentException {
         if (min < max) {
@@ -199,10 +199,9 @@ public class BarraProgreso extends JProgressBar implements Serializable {
      * Se encarga de establecer los valores minimo, maximo y de progreso de la
      * barra
      *
-     * @param min
-     * @param max
-     * @param progresoActual
-     * @throws IllegalArgumentException
+     * @param min int
+     * @param max int
+     * @param progresoActual int
      */
     public void setValores(int min, int max, int progresoActual) throws IllegalArgumentException {
         setValores(min, max);
@@ -218,8 +217,8 @@ public class BarraProgreso extends JProgressBar implements Serializable {
      * de progreso y los activa para que sean visibles. Si alguno de ellos se
      * define como null, se desactivara
      *
-     * @param border
-     * @param texto
+     * @param border Border
+     * @param texto String
      */
     public void setBordeYTexto(Border border, String texto) {
         if (border == null) {
@@ -240,7 +239,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Devuelve el valor definido como minimo en la barra
      *
-     * @return minimo
+     * @return minimo int
      */
     public int getMinimo() {
         minimo = getMinimum();
@@ -250,7 +249,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Establece el valor minimo de la barra
      *
-     * @param minimo
+     * @param minimo int
      */
     public void setMinimo(int minimo) {
         this.minimo = minimo;
@@ -270,7 +269,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Establece el valor maximo de la barra
      *
-     * @param maximo
+     * @param maximo int
      */
     public void setMaximo(int maximo) {
         this.maximo = maximo;
@@ -280,7 +279,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Devuelve el progreso actual de la barra
      *
-     * @return progreso
+     * @return progreso int
      */
     public int getProgreso() {
         progreso = getValue();
@@ -290,7 +289,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Establece el progreso actual de la barra
      *
-     * @param progreso
+     * @param progreso int
      */
     public void setProgreso(int progreso) {
         this.progreso = progreso;
@@ -300,7 +299,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Devuelve el texto establecido en la barra
      *
-     * @return texto
+     * @return texto String
      */
     public String getTexto() {
         texto = getString();
@@ -310,7 +309,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Establece el texto que se mostrara encima de la barra
      *
-     * @param texto
+     * @param texto String
      */
     public void setTexto(String texto) {
         this.texto = texto;
@@ -320,7 +319,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Devuelve el borde definido en la barra
      *
-     * @return borde
+     * @return borde Border
      */
     public Border getBorde() {
         borde = getBorder();
@@ -330,7 +329,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Establece el borde de la barra
      *
-     * @param borde
+     * @param borde Border
      */
     public void setBorde(Border borde) {
         this.borde = borde;
@@ -340,7 +339,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Devuelve el JFrame que contiene a la barra
      *
-     * @return framePadre
+     * @return framePadre JFrame
      */
     public JFrame getFramePadre() {
         return framePadre;
@@ -349,7 +348,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Devuelve el JDialog que contiene a la barra
      *
-     * @return dialogPadre
+     * @return dialogPadre JDialog
      */
     public JDialog getDialogPadre() {
         return dialogPadre;
@@ -358,7 +357,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Devuelve el JFrame que la barra abre
      *
-     * @return frameNuevo
+     * @return frameNuevo JFrame
      */
     public JFrame getFrameNuevo() {
         return frameNuevo;
@@ -367,7 +366,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Devuelve el JDialog que la barra abre
      *
-     * @return dialogNuevo
+     * @return dialogNuevo JDialog
      */
     public JDialog getDialogNuevo() {
         return dialogNuevo;
@@ -376,7 +375,7 @@ public class BarraProgreso extends JProgressBar implements Serializable {
     /**
      * Devuelve un array de int con los valores minimo, maximo y progreso actual
      *
-     * @return valores
+     * @return valores int[]
      */
     public int[] getValores() {
         int[] valores = {getMinimo(), getMaximo(), getProgreso()};
